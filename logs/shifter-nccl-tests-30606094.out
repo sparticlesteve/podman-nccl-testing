@@ -1,0 +1,364 @@
++ WORKDIR=/pscratch/sd/s/sfarrell/podman-nccl-tests/run_shifter
++ export NCCL_DEBUG=INFO
++ NCCL_DEBUG=INFO
++ export FI_LOG_LEVEL=debug
++ FI_LOG_LEVEL=debug
++ '[' '!' -d /pscratch/sd/s/sfarrell/podman-nccl-tests/run_shifter/nccl-tests ']'
++ srun --mpi=pmi2 shifter strace -o /pscratch/sd/s/sfarrell/podman-nccl-tests/run_shifter/strace.out /pscratch/sd/s/sfarrell/podman-nccl-tests/run_shifter/nccl-tests/build/all_reduce_perf -b 8 -e 4G -f 2
+# nThread 1 nGpus 1 minBytes 8 maxBytes 4294967296 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid  83322 on  nid001552 device  0 [0x03] NVIDIA A100-SXM4-40GB
+nid001552:83322:83322 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to hsn
+nid001552:83322:83322 [0] NCCL INFO Bootstrap : Using hsn0:10.249.8.48<0>
+nid001552:83322:83322 [0] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v8 symbol.
+nid001552:83322:83322 [0] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v6)
+nid001552:83322:83322 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v8 symbol.
+nid001552:83322:83322 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+nid001552:83322:83322 [0] NCCL INFO cudaDriverVersion 12000
+NCCL version 2.21.5+cuda12.5
+nid001552:83322:83374 [0] NCCL INFO NET/OFI Using aws-ofi-nccl 1.6.0
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable perf_cntr=<not set>
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable hook=<not set>
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable hmem=<not set>
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable hmem_cuda_use_gdrcopy=<not set>
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable hmem_cuda_enable_xfer=<not set>
+libfabric:83322:1726684535::core:core:rocr_hmem_dl_init():290<info> Unable to dlopen libhsa-runtime64.so
+libfabric:83322:1726684535::core:core:ofi_hmem_init():334<info> Hmem iface FI_HMEM_ROCR not supported
+libfabric:83322:1726684535::core:core:fi_param_get_():288<info> read string var log_level=debug
+libfabric:83322:1726684535::core:core:ze_hmem_dl_init():474<warn> Failed to dlopen libze_loader.so
+libfabric:83322:1726684535::core:core:ofi_hmem_init():339<warn> Failed to initialize hmem iface FI_HMEM_ZE: No data available
+libfabric:83322:1726684535::core:core:ofi_hmem_init():334<info> Hmem iface FI_HMEM_NEURON not supported
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable hmem_disable_p2p=<not set>
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable mr_cache_max_size=<not set>
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable mr_cache_max_count=<not set>
+libfabric:83322:1726684535::core:core:fi_param_get_():288<info> read string var mr_cache_monitor=userfaultfd
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable mr_cuda_cache_monitor_enabled=<not set>
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable mr_rocr_cache_monitor_enabled=<not set>
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable mr_ze_cache_monitor_enabled=<not set>
+libfabric:83322:1726684535::core:mr:ofi_default_cache_size():82<info> default cache size=1054158432
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable provider=<not set>
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable universe_size=<not set>
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable poll_fairness=<not set>
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable cxi_compat=<not set>
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable provider_path=<not set>
+libfabric:83322:1726684535::core:core:ofi_load_dl_prov():709<info> restricted_dl: setting FI_PROVIDER_PATH to "/opt/cray/libfabric/1.15.2.0/lib64/libfabric"
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable rget_tc=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable rdzv_aligned_sw_rget=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable enable_trig_op_limit=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable disable_non_inject_msg_idc=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():306<info> read bool var disable_host_register=1
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable enable_unrestricted_end_ro=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable odp=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable force_odp=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable ats=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable iotlb=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable ats_mlock_mode=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable device_name=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable telemetry=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable telemetry_rgid=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():288<info> read string var rx_match_mode=hybrid
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable rdzv_threshold=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable rdzv_get_min=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable rdzv_eager_size=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable oflow_buf_size=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable oflow_buf_count=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable oflow_buf_min_posted=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable oflow_buf_max_cached=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable safe_devmem_copy_threshold=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable optimized_mrs=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable llring_mode=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable zbcoll_radix=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable cq_policy=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable default_vni=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable eq_ack_batch_size=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable msg_lossless=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable req_buf_size=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable req_buf_min_posted=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable req_buf_max_count=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable req_buf_max_cached=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable hybrid_preemptive=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable hybrid_recv_preemptive=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable fc_retry_usec_delay=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable sw_rx_tx_init_max=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable ctrl_rx_eq_max_size=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable default_cq_size=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable disable_cq_hugetlb=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable disable_eq_hugetlb=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable cq_fill_percent=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable coll_job_id=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable coll_step_id=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable coll_fabric_mgr_url=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable coll_fabric_mgr_token=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable coll_use_dma_put=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable coll_timeout_usec=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable default_tx_size=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable disable_hmem_dev_register=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable force_ze_hmem_support=<not set>
+libfabric:83322:1726684535::cxi:core:fi_param_get_():279<info> variable rdzv_proto=<not set>
+libfabric:83322:1726684535::core:core:ofi_register_provider():468<info> registering provider: cxi (0.1)
+libfabric:83322:1726684535::ofi_rxm:core:fi_param_get_():279<info> variable enable_passthru=<not set>
+libfabric:83322:1726684535::ofi_rxm:core:fi_param_get_():279<info> variable buffer_size=<not set>
+libfabric:83322:1726684535::ofi_rxm:core:fi_param_get_():279<info> variable tx_size=<not set>
+libfabric:83322:1726684535::ofi_rxm:core:fi_param_get_():279<info> variable rx_size=<not set>
+libfabric:83322:1726684535::ofi_rxm:core:fi_param_get_():279<info> variable msg_tx_size=<not set>
+libfabric:83322:1726684535::ofi_rxm:core:fi_param_get_():279<info> variable msg_rx_size=<not set>
+libfabric:83322:1726684535::ofi_rxm:core:fi_param_get_():279<info> variable cm_progress_interval=<not set>
+libfabric:83322:1726684535::ofi_rxm:core:fi_param_get_():279<info> variable cq_eq_fairness=<not set>
+libfabric:83322:1726684535::ofi_rxm:core:fi_param_get_():279<info> variable data_auto_progress=<not set>
+libfabric:83322:1726684535::ofi_rxm:core:fi_param_get_():279<info> variable use_rndv_write=<not set>
+libfabric:83322:1726684535::ofi_rxm:core:fi_param_get_():279<info> variable def_wait_obj=<not set>
+libfabric:83322:1726684535::ofi_rxm:core:fi_param_get_():279<info> variable def_tcp_wait_obj=<not set>
+libfabric:83322:1726684535::core:core:ofi_register_provider():468<info> registering provider: ofi_rxm (115.20)
+libfabric:83322:1726684535::ofi_rxd:core:fi_param_get_():279<info> variable spin_count=<not set>
+libfabric:83322:1726684535::ofi_rxd:core:fi_param_get_():279<info> variable retry=<not set>
+libfabric:83322:1726684535::ofi_rxd:core:fi_param_get_():279<info> variable max_peers=<not set>
+libfabric:83322:1726684535::ofi_rxd:core:fi_param_get_():279<info> variable max_unacked=<not set>
+libfabric:83322:1726684535::core:core:ofi_register_provider():468<info> registering provider: ofi_rxd (115.20)
+libfabric:83322:1726684535::core:core:ofi_register_provider():468<info> registering provider: udp (115.20)
+libfabric:83322:1726684535::tcp:core:fi_param_get_():279<info> variable port_high_range=<not set>
+libfabric:83322:1726684535::tcp:core:fi_param_get_():279<info> variable port_low_range=<not set>
+libfabric:83322:1726684535::tcp:core:fi_param_get_():279<info> variable tx_size=<not set>
+libfabric:83322:1726684535::tcp:core:fi_param_get_():279<info> variable rx_size=<not set>
+libfabric:83322:1726684535::tcp:core:fi_param_get_():279<info> variable nodelay=<not set>
+libfabric:83322:1726684535::tcp:core:fi_param_get_():279<info> variable staging_sbuf_size=<not set>
+libfabric:83322:1726684535::tcp:core:fi_param_get_():279<info> variable prefetch_rbuf_size=<not set>
+libfabric:83322:1726684535::tcp:core:fi_param_get_():279<info> variable zerocopy_size=<not set>
+libfabric:83322:1726684535::core:core:ofi_register_provider():468<info> registering provider: tcp (115.20)
+libfabric:83322:1726684535::core:core:ofi_register_provider():468<info> registering provider: ofi_hook_perf (115.20)
+libfabric:83322:1726684535::core:core:ofi_register_provider():468<info> registering provider: ofi_hook_debug (115.20)
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable hmem=<not set>
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable hmem_cuda_use_gdrcopy=<not set>
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable hmem_cuda_enable_xfer=<not set>
+libfabric:83322:1726684535::core:core:rocr_hmem_dl_init():290<info> Unable to dlopen libhsa-runtime64.so
+libfabric:83322:1726684535::core:core:ofi_hmem_init():334<info> Hmem iface FI_HMEM_ROCR not supported
+libfabric:83322:1726684535::core:core:fi_param_get_():288<info> read string var log_level=debug
+libfabric:83322:1726684535::core:core:ze_hmem_dl_init():474<warn> Failed to dlopen libze_loader.so
+libfabric:83322:1726684535::core:core:ofi_hmem_init():339<warn> Failed to initialize hmem iface FI_HMEM_ZE: No data available
+libfabric:83322:1726684535::core:core:ofi_hmem_init():334<info> Hmem iface FI_HMEM_NEURON not supported
+libfabric:83322:1726684535::core:core:fi_param_get_():279<info> variable hmem_disable_p2p=<not set>
+libfabric:83322:1726684535::core:core:ofi_register_provider():468<info> registering provider: ofi_hook_hmem (1.0)
+libfabric:83322:1726684535::core:core:fi_param_get_():288<info> read string var log_level=debug
+libfabric:83322:1726684535::core:core:ze_hmem_dl_init():474<warn> Failed to dlopen libze_loader.so
+libfabric:83322:1726684535::core:core:ofi_register_provider():468<info> registering provider: ofi_hook_dmabuf_peer_mem (115.20)
+libfabric:83322:1726684535::core:core:ofi_register_provider():468<info> registering provider: ofi_hook_noop (115.20)
+libfabric:83322:1726684535::ofi_rxm:core:fi_param_get_():279<info> variable use_srx=<not set>
+libfabric:83322:1726684535:ofi_rxm:core:core:ofi_layering_ok():1080<info> Need core provider, skipping ofi_rxd
+libfabric:83322:1726684535::ofi_rxm:core:ofi_check_info():1084<info> Unsupported capabilities
+libfabric:83322:1726684535::ofi_rxm:core:ofi_check_info():1085<info> Supported: FI_MSG, FI_RMA, FI_TAGGED, FI_ATOMIC, FI_READ, FI_WRITE, FI_RECV, FI_SEND, FI_REMOTE_READ, FI_REMOTE_WRITE, FI_MULTI_RECV, FI_LOCAL_COMM, FI_REMOTE_COMM, FI_SOURCE, FI_DIRECTED_RECV
+libfabric:83322:1726684535::ofi_rxm:core:ofi_check_info():1085<info> Requested: FI_MSG, FI_RMA, FI_TAGGED, FI_READ, FI_REMOTE_COMM, FI_HMEM
+libfabric:83322:1726684535::ofi_rxm:core:fi_param_get_():279<info> variable use_srx=<not set>
+libfabric:83322:1726684535:ofi_rxm:core:core:ofi_layering_ok():1080<info> Need core provider, skipping ofi_rxm
+libfabric:83322:1726684535:ofi_rxm:core:core:ofi_layering_ok():1080<info> Need core provider, skipping ofi_rxd
+libfabric:83322:1726684535:ofi_rxm:udp:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:udp:core:ofi_check_ep_type():682<info> Supported: FI_EP_DGRAM
+libfabric:83322:1726684535:ofi_rxm:udp:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:core:core:fi_getinfo_():1185<info> fi_getinfo: provider udp returned -61 (No data available)
+libfabric:83322:1726684535:ofi_rxm:tcp:core:ofi_check_info():1084<info> Unsupported capabilities
+libfabric:83322:1726684535:ofi_rxm:tcp:core:ofi_check_info():1085<info> Supported: FI_MSG, FI_RMA, FI_READ, FI_WRITE, FI_RECV, FI_SEND, FI_REMOTE_READ, FI_REMOTE_WRITE, FI_RMA_PMEM, FI_LOCAL_COMM, FI_REMOTE_COMM, FI_RMA_EVENT
+libfabric:83322:1726684535:ofi_rxm:tcp:core:ofi_check_info():1085<info> Requested: FI_MSG, FI_RMA, FI_READ, FI_RECV, FI_SEND, FI_REMOTE_READ, FI_REMOTE_WRITE, FI_HMEM
+libfabric:83322:1726684535:ofi_rxm:tcp:core:ofi_check_info():1084<info> Unsupported capabilities
+libfabric:83322:1726684535:ofi_rxm:tcp:core:ofi_check_info():1085<info> Supported: FI_MSG, FI_RMA, FI_TAGGED, FI_READ, FI_WRITE, FI_RECV, FI_SEND, FI_REMOTE_READ, FI_REMOTE_WRITE, FI_RMA_PMEM, FI_LOCAL_COMM, FI_REMOTE_COMM, FI_RMA_EVENT
+libfabric:83322:1726684535:ofi_rxm:tcp:core:ofi_check_info():1085<info> Requested: FI_MSG, FI_RMA, FI_READ, FI_RECV, FI_SEND, FI_REMOTE_READ, FI_REMOTE_WRITE, FI_HMEM
+libfabric:83322:1726684535:ofi_rxm:core:core:fi_getinfo_():1185<info> fi_getinfo: provider tcp returned -61 (No data available)
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Supported: FI_EP_RDM
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Supported: FI_EP_RDM
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Supported: FI_EP_RDM
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Supported: FI_EP_RDM
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Supported: FI_EP_RDM
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Supported: FI_EP_RDM
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Supported: FI_EP_RDM
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Supported: FI_EP_RDM
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Supported: FI_EP_RDM
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Supported: FI_EP_RDM
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Supported: FI_EP_RDM
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Supported: FI_EP_RDM
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Supported: FI_EP_RDM
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Supported: FI_EP_RDM
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Supported: FI_EP_RDM
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Supported: FI_EP_RDM
+libfabric:83322:1726684535:ofi_rxm:cxi:core:ofi_check_ep_type():682<info> Requested: FI_EP_MSG
+libfabric:83322:1726684535:ofi_rxm:core:core:fi_getinfo_():1185<info> fi_getinfo: provider cxi returned -61 (No data available)
+libfabric:83322:1726684535::ofi_rxm:core:ofi_check_info():1084<info> Unsupported capabilities
+libfabric:83322:1726684535::ofi_rxm:core:ofi_check_info():1085<info> Supported: FI_MSG, FI_RMA, FI_TAGGED, FI_ATOMIC, FI_COLLECTIVE, FI_READ, FI_WRITE, FI_RECV, FI_SEND, FI_REMOTE_READ, FI_REMOTE_WRITE, FI_MULTI_RECV, FI_LOCAL_COMM, FI_REMOTE_COMM, FI_SOURCE, FI_DIRECTED_RECV
+libfabric:83322:1726684535::ofi_rxm:core:ofi_check_info():1085<info> Requested: FI_MSG, FI_RMA, FI_TAGGED, FI_READ, FI_REMOTE_COMM, FI_HMEM
+libfabric:83322:1726684535::core:core:fi_getinfo_():1185<info> fi_getinfo: provider ofi_rxm returned -61 (No data available)
+libfabric:83322:1726684535::ofi_rxd:core:ofi_check_info():1084<info> Unsupported capabilities
+libfabric:83322:1726684535::ofi_rxd:core:ofi_check_info():1085<info> Supported: FI_MSG, FI_RMA, FI_TAGGED, FI_ATOMIC, FI_READ, FI_WRITE, FI_RECV, FI_SEND, FI_REMOTE_READ, FI_REMOTE_WRITE, FI_MULTI_RECV, FI_LOCAL_COMM, FI_REMOTE_COMM, FI_RMA_EVENT, FI_SOURCE, FI_DIRECTED_RECV
+libfabric:83322:1726684535::ofi_rxd:core:ofi_check_info():1085<info> Requested: FI_MSG, FI_RMA, FI_TAGGED, FI_READ, FI_REMOTE_COMM, FI_HMEM
+libfabric:83322:1726684535::core:core:fi_getinfo_():1185<info> fi_getinfo: provider ofi_rxd returned -61 (No data available)
+libfabric:83322:1726684535::udp:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535::udp:core:ofi_check_ep_type():682<info> Supported: FI_EP_DGRAM
+libfabric:83322:1726684535::udp:core:ofi_check_ep_type():682<info> Requested: FI_EP_RDM
+libfabric:83322:1726684535::core:core:fi_getinfo_():1185<info> fi_getinfo: provider udp returned -61 (No data available)
+libfabric:83322:1726684535::tcp:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535::tcp:core:ofi_check_ep_type():682<info> Supported: FI_EP_MSG
+libfabric:83322:1726684535::tcp:core:ofi_check_ep_type():682<info> Requested: FI_EP_RDM
+libfabric:83322:1726684535::tcp:core:ofi_check_ep_type():681<info> unsupported endpoint type
+libfabric:83322:1726684535::tcp:core:ofi_check_ep_type():682<info> Supported: FI_EP_MSG
+libfabric:83322:1726684535::tcp:core:ofi_check_ep_type():682<info> Requested: FI_EP_RDM
+libfabric:83322:1726684535::core:core:fi_getinfo_():1185<info> fi_getinfo: provider tcp returned -61 (No data available)
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_ss_env_get_vni():1243<info> nid001552: SLINGSHOT_VNIS not found
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_best_svc_id():1485<info> nid001552: Generated auth key (1:1) for cxi0
+libfabric:83322:1726684535::cxi:fabric:cxip_alter_auth_key():1540<info> nid001552: Assigned auth key (1:1) to cxi0
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_ss_env_get_vni():1243<info> nid001552: SLINGSHOT_VNIS not found
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_best_svc_id():1485<info> nid001552: Generated auth key (1:1) for cxi0
+libfabric:83322:1726684535::cxi:fabric:cxip_alter_auth_key():1540<info> nid001552: Assigned auth key (1:1) to cxi0
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_ss_env_get_vni():1243<info> nid001552: SLINGSHOT_VNIS not found
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_best_svc_id():1485<info> nid001552: Generated auth key (1:1) for cxi0
+libfabric:83322:1726684535::cxi:fabric:cxip_alter_auth_key():1540<info> nid001552: Assigned auth key (1:1) to cxi0
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_ss_env_get_vni():1243<info> nid001552: SLINGSHOT_VNIS not found
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_best_svc_id():1485<info> nid001552: Generated auth key (1:1) for cxi0
+libfabric:83322:1726684535::cxi:fabric:cxip_alter_auth_key():1540<info> nid001552: Assigned auth key (1:1) to cxi0
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_ss_env_get_vni():1243<info> nid001552: SLINGSHOT_VNIS not found
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_best_svc_id():1485<info> nid001552: Generated auth key (1:1) for cxi1
+libfabric:83322:1726684535::cxi:fabric:cxip_alter_auth_key():1540<info> nid001552: Assigned auth key (1:1) to cxi1
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_ss_env_get_vni():1243<info> nid001552: SLINGSHOT_VNIS not found
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_best_svc_id():1485<info> nid001552: Generated auth key (1:1) for cxi1
+libfabric:83322:1726684535::cxi:fabric:cxip_alter_auth_key():1540<info> nid001552: Assigned auth key (1:1) to cxi1
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_ss_env_get_vni():1243<info> nid001552: SLINGSHOT_VNIS not found
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_best_svc_id():1485<info> nid001552: Generated auth key (1:1) for cxi1
+libfabric:83322:1726684535::cxi:fabric:cxip_alter_auth_key():1540<info> nid001552: Assigned auth key (1:1) to cxi1
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_ss_env_get_vni():1243<info> nid001552: SLINGSHOT_VNIS not found
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_best_svc_id():1485<info> nid001552: Generated auth key (1:1) for cxi1
+libfabric:83322:1726684535::cxi:fabric:cxip_alter_auth_key():1540<info> nid001552: Assigned auth key (1:1) to cxi1
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_ss_env_get_vni():1243<info> nid001552: SLINGSHOT_VNIS not found
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_best_svc_id():1485<info> nid001552: Generated auth key (1:1) for cxi2
+libfabric:83322:1726684535::cxi:fabric:cxip_alter_auth_key():1540<info> nid001552: Assigned auth key (1:1) to cxi2
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_ss_env_get_vni():1243<info> nid001552: SLINGSHOT_VNIS not found
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_best_svc_id():1485<info> nid001552: Generated auth key (1:1) for cxi2
+libfabric:83322:1726684535::cxi:fabric:cxip_alter_auth_key():1540<info> nid001552: Assigned auth key (1:1) to cxi2
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_ss_env_get_vni():1243<info> nid001552: SLINGSHOT_VNIS not found
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_best_svc_id():1485<info> nid001552: Generated auth key (1:1) for cxi2
+libfabric:83322:1726684535::cxi:fabric:cxip_alter_auth_key():1540<info> nid001552: Assigned auth key (1:1) to cxi2
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_ss_env_get_vni():1243<info> nid001552: SLINGSHOT_VNIS not found
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_best_svc_id():1485<info> nid001552: Generated auth key (1:1) for cxi2
+libfabric:83322:1726684535::cxi:fabric:cxip_alter_auth_key():1540<info> nid001552: Assigned auth key (1:1) to cxi2
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_ss_env_get_vni():1243<info> nid001552: SLINGSHOT_VNIS not found
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_best_svc_id():1485<info> nid001552: Generated auth key (1:1) for cxi3
+libfabric:83322:1726684535::cxi:fabric:cxip_alter_auth_key():1540<info> nid001552: Assigned auth key (1:1) to cxi3
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_ss_env_get_vni():1243<info> nid001552: SLINGSHOT_VNIS not found
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_best_svc_id():1485<info> nid001552: Generated auth key (1:1) for cxi3
+libfabric:83322:1726684535::cxi:fabric:cxip_alter_auth_key():1540<info> nid001552: Assigned auth key (1:1) to cxi3
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_ss_env_get_vni():1243<info> nid001552: SLINGSHOT_VNIS not found
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_best_svc_id():1485<info> nid001552: Generated auth key (1:1) for cxi3
+libfabric:83322:1726684535::cxi:fabric:cxip_alter_auth_key():1540<info> nid001552: Assigned auth key (1:1) to cxi3
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_ss_env_get_vni():1243<info> nid001552: SLINGSHOT_VNIS not found
+libfabric:83322:1726684535::cxi:fabric:cxip_gen_auth_key_best_svc_id():1485<info> nid001552: Generated auth key (1:1) for cxi3
+libfabric:83322:1726684535::cxi:fabric:cxip_alter_auth_key():1540<info> nid001552: Assigned auth key (1:1) to cxi3
+nid001552:83322:83374 [0] NCCL INFO NET/OFI Selected Provider is cxi (found 8 nics)
+nid001552:83322:83374 [0] NCCL INFO Using non-device net plugin version 0
+nid001552:83322:83374 [0] NCCL INFO Using network AWS Libfabric
+nid001552:83322:83374 [0] NCCL INFO DMA-BUF is available on GPU device 0
+nid001552:83322:83374 [0] NCCL INFO ncclCommInitRank comm 0x560fda86ba80 rank 0 nranks 1 cudaDev 0 nvmlDev 0 busId 3000 commId 0x37e3544edf84d915 - Init START
+nid001552:83322:83374 [0] NCCL INFO Setting affinity for GPU 0 to ffff0000,00000000,ffff0000,00000000
+nid001552:83322:83374 [0] NCCL INFO comm 0x560fda86ba80 rank 0 nRanks 1 nNodes 1 localRanks 1 localRank 0 MNNVL 0
+nid001552:83322:83374 [0] NCCL INFO Channel 00/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 01/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 02/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 03/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 04/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 05/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 06/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 07/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 08/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 09/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 10/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 11/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 12/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 13/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 14/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 15/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 16/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 17/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 18/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 19/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 20/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 21/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 22/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 23/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 24/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 25/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 26/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 27/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 28/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 29/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 30/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Channel 31/32 :    0
+nid001552:83322:83374 [0] NCCL INFO Trees [0] -1/-1/-1->0->-1 [1] -1/-1/-1->0->-1 [2] -1/-1/-1->0->-1 [3] -1/-1/-1->0->-1 [4] -1/-1/-1->0->-1 [5] -1/-1/-1->0->-1 [6] -1/-1/-1->0->-1 [7] -1/-1/-1->0->-1 [8] -1/-1/-1->0->-1 [9] -1/-1/-1->0->-1 [10] -1/-1/-1->0->-1 [11] -1/-1/-1->0->-1 [12] -1/-1/-1->0->-1 [13] -1/-1/-1->0->-1 [14] -1/-1/-1->0->-1 [15] -1/-1/-1->0->-1 [16] -1/-1/-1->0->-1 [17] -1/-1/-1->0->-1 [18] -1/-1/-1->0->-1 [19] -1/-1/-1->0->-1 [20] -1/-1/-1->0->-1 [21] -1/-1/-1->0->-1 [22] -1/-1/-1->0->-1 [23] -1/-1/-1->0->-1 [24] -1/-1/-1->0->-1 [25] -1/-1/-1->0->-1 [26] -1/-1/-1->0->-1 [27] -1/-1/-1->0->-1 [28] -1/-1/-1->0->-1 [29] -1/-1/-1->0->-1 [30] -1/-1/-1->0->-1 [31] -1/-1/-1->0->-1
+nid001552:83322:83374 [0] NCCL INFO P2P Chunksize set to 131072
+nid001552:83322:83374 [0] NCCL INFO Connected all rings
+nid001552:83322:83374 [0] NCCL INFO Connected all trees
+nid001552:83322:83374 [0] NCCL INFO 32 coll channels, 32 collnet channels, 0 nvls channels, 32 p2p channels, 32 p2p channels per peer
+nid001552:83322:83374 [0] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v2, using internal tuner instead.
+nid001552:83322:83374 [0] NCCL INFO ncclCommInitRank comm 0x560fda86ba80 rank 0 nranks 1 cudaDev 0 nvmlDev 0 busId 3000 commId 0x37e3544edf84d915 - Init COMPLETE
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+           8             2     float     sum      -1     3.49    0.00    0.00      0     0.18    0.05    0.00      0
+          16             4     float     sum      -1     3.83    0.00    0.00      0     0.18    0.09    0.00      0
+          32             8     float     sum      -1     4.27    0.01    0.00      0     0.18    0.18    0.00      0
+          64            16     float     sum      -1     4.12    0.02    0.00      0     0.18    0.36    0.00      0
+         128            32     float     sum      -1     4.14    0.03    0.00      0     0.18    0.71    0.00      0
+         256            64     float     sum      -1     4.11    0.06    0.00      0     0.18    1.43    0.00      0
+         512           128     float     sum      -1     4.21    0.12    0.00      0     0.18    2.87    0.00      0
+        1024           256     float     sum      -1     4.12    0.25    0.00      0     0.18    5.66    0.00      0
+        2048           512     float     sum      -1     4.02    0.51    0.00      0     0.18   11.42    0.00      0
+        4096          1024     float     sum      -1     4.09    1.00    0.00      0     0.18   22.71    0.00      0
+        8192          2048     float     sum      -1     4.13    1.99    0.00      0     0.18   45.68    0.00      0
+       16384          4096     float     sum      -1     4.08    4.01    0.00      0     0.18   90.59    0.00      0
+       32768          8192     float     sum      -1     4.06    8.06    0.00      0     0.18  178.72    0.00      0
+       65536         16384     float     sum      -1     4.21   15.55    0.00      0     0.18  358.41    0.00      0
+      131072         32768     float     sum      -1     4.28   30.65    0.00      0     0.18  726.76    0.00      0
+      262144         65536     float     sum      -1     4.03   64.99    0.00      0     0.18  1469.83    0.00      0
+      524288        131072     float     sum      -1     5.00  104.79    0.00      0     0.16  3250.39    0.00      0
+     1048576        262144     float     sum      -1     5.55  188.89    0.00      0     0.16  6541.33    0.00      0
+     2097152        524288     float     sum      -1     7.94  264.16    0.00      0     0.16  13123.60    0.00      0
+     4194304       1048576     float     sum      -1    11.82  354.82    0.00      0     0.16  26003.12    0.00      0
+     8388608       2097152     float     sum      -1    17.96  466.97    0.00      0     0.16  52494.42    0.00      0
+    16777216       4194304     float     sum      -1    30.17  556.12    0.00      0     0.16  105649.97    0.00      0
+    33554432       8388608     float     sum      -1    55.03  609.77    0.00      0     0.16  206045.02    0.00      0
+    67108864      16777216     float     sum      -1    106.3  631.47    0.00      0     0.16  422599.90    0.00      0
+   134217728      33554432     float     sum      -1    206.3  650.53    0.00      0     0.16  839910.69    0.00      0
+   268435456      67108864     float     sum      -1    408.9  656.45    0.00      0     0.16  1674581.76    0.00      0
+   536870912     134217728     float     sum      -1    814.7  658.99    0.00      0     0.16  3277600.20    0.00      0
+  1073741824     268435456     float     sum      -1   1622.8  661.68    0.00      0     0.16  6656799.90    0.00      0
+  2147483648     536870912     float     sum      -1   3237.4  663.33    0.00      0     0.16  13396654.07    0.00      0
+  4294967296    1073741824     float     sum      -1   6466.2  664.22    0.00      0     0.16  26627199.60    0.00      0
+nid001552:83322:83322 [0] NCCL INFO comm 0x560fda86ba80 rank 0 nranks 1 cudaDev 0 busId 3000 - Destroy COMPLETE
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 0 
+#
+
