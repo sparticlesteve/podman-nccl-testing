@@ -26,4 +26,5 @@ fi
 
 # Run the test
 srun --mpi=pmi2 shifter \
-    strace -o $WORKDIR/strace.out $WORKDIR/nccl-tests/build/all_reduce_perf -b 8 -e 4G -f 2
+    $WORKDIR/nccl-tests/build/all_reduce_perf -b 8 -e 4G -f 2
+    #strace -o $WORKDIR/strace.out
