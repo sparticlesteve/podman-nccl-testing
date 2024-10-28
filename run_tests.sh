@@ -12,7 +12,7 @@
 WORKDIR=$SCRATCH/podman-nccl-tests/run_tests #_$SLURM_JOB_ID
 CONT_NAME=nersc/pytorch:24.06.01
 NCCL_NET_PATH=/global/common/software/nersc9/nccl/2.19/plugin
-LIBFABRIC_PATH=/opt/cray/libfabric/1.15.2.0/lib64
+LIBFABRIC_PATH=/opt/cray/libfabric/1.20.1/lib64
 export FI_MR_CACHE_MONITOR=userfaultfd
 export NCCL_DEBUG=INFO
 export FI_LOG_LEVEL=debug
