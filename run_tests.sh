@@ -62,7 +62,7 @@ fi
 
 # Run the tests
 srun --mpi=pmi2 podman-hpc run ${CONT_PARAMS[@]} $CONT_NAME bash -c "
-    export LD_LIBRARY_PATH=/opt/nccl-ofi/lib:\$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=/usr/lib64:/opt/nccl-ofi/lib:\$LD_LIBRARY_PATH
     #strace -o strace.out
     ./nccl-tests/build/all_reduce_perf -b 8 -e 4G -f 2
 "
