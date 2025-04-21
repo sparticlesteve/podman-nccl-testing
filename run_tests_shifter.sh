@@ -15,7 +15,8 @@ set -x
 # Environment
 WORKDIR=$SCRATCH/podman-nccl-tests/run_shifter #_$SLURM_JOB_ID
 export NCCL_DEBUG=INFO
-export FI_LOG_LEVEL=debug
+#export FI_LOG_LEVEL=debug
+#env | grep NCCL
 
 # Run the build
 if [ ! -d $WORKDIR/nccl-tests ]; then

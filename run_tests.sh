@@ -15,8 +15,9 @@ NCCL_NET_PATH=/global/common/software/nersc9/nccl/2.19/plugin
 LIBFABRIC_PATH=/opt/cray/libfabric/1.20.1/lib64
 export FI_MR_CACHE_MONITOR=userfaultfd
 export NCCL_DEBUG=INFO
-export FI_LOG_LEVEL=debug
+#export FI_LOG_LEVEL=debug
 
+# NCCL settings
 export FI_CXI_DISABLE_HOST_REGISTER=1
 export NCCL_CROSS_NIC=1
 export NCCL_SOCKET_IFNAME=hsn
