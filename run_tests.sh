@@ -37,13 +37,15 @@ CONT_PARAMS=(
 # Mount the NCCL plugin's system dependencies
 CONT_PARAMS+=(
     --mount type=glob,src=$LIBFABRIC_PATH/libfabric.so\*,dst=/usr/lib64/,ro=true
-    --mount type=glob,src=/opt/cray/xpmem/default/lib64/libxpmem.so\*,dst=/usr/lib64/,ro=true
+    --mount type=glob,src=/usr/lib64/libxpmem.so\*,ro=true
     --mount type=glob,src=/usr/lib64/libcxi.so\*,ro=true
     --mount type=glob,src=/usr/lib64/libjson-c.so\*,ro=true
-    --mount type=glob,src=/usr/lib64/libatomic.so\*,ro=true
-    --mount type=glob,src=/usr/lib64/libldap_r-2.4.so\*,ro=true
     --mount type=glob,src=/usr/lib64/liblber-2.4.so\*,ro=true
+    --mount type=glob,src=/usr/lib64/libldap_r-2.4.so\*,ro=true
     --mount type=glob,src=/usr/lib64/libsasl2.so\*,ro=true
+    --mount type=glob,src=/usr/lib64/libibverbs.so\*,ro=true
+    --mount type=glob,src=/usr/lib64/libgdrapi.so\*,ro=true
+    #--mount type=glob,src=/usr/lib64/libatomic.so\*,ro=true
 )
 
 set -x
